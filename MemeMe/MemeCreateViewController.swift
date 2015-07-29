@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MemeCreateViewController.swift
 //  Image Picker Play
 //
 //  Created by Paul Thaden on 7/27/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
+class MemeCreateViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     @IBOutlet weak var imagePickerView: UIImageView!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var saveButton: UIBarButtonItem!

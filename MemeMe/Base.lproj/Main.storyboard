@@ -229,7 +229,7 @@
         <!--MemeCreateViewController-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController storyboardIdentifier="MemeCreateViewController" title="MemeCreateViewController" id="vXZ-lx-hvc" userLabel="MemeCreateViewController" customClass="ViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MemeCreateViewController" title="MemeCreateViewController" id="vXZ-lx-hvc" userLabel="MemeCreateViewController" customClass="MemeCreateViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
