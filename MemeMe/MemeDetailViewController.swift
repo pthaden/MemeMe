@@ -30,7 +30,7 @@ class MemeDetailViewController: UIViewController {
     //Cancel button
     
     @IBAction func dismissModal(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        dismissViewControllerAnimated(true, completion: nil)
         
     }
 

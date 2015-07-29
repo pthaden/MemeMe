@@ -83,20 +83,20 @@ class MemeCreateViewController: UIViewController, UIImagePickerControllerDelegat
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
         
         if let image = info[UIImagePickerControllerOriginalImage]  as? UIImage {
-            self.imagePickerView.image = image
+            imagePickerView.image = image
             
             //enable share and save buttons
-            self.shareButton.enabled = true
-            self.saveButton.enabled = true
+            shareButton.enabled = true
+            saveButton.enabled = true
             
         }
         
-        self.dismissViewControllerAnimated(true, completion: nil)
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     @IBAction func pickAnImageFromAlbum(sender: AnyObject) {
@@ -111,7 +111,7 @@ class MemeCreateViewController: UIViewController, UIImagePickerControllerDelegat
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         imagePicker.sourceType = sourceType
-        self.presentViewController(imagePicker, animated: true, completion: nil)
+        presentViewController(imagePicker, animated: true, completion: nil)
     }
     
     
@@ -131,12 +131,12 @@ class MemeCreateViewController: UIViewController, UIImagePickerControllerDelegat
     
     //When the keyboardWillShow notification is received, shift the view's frame up
     func keyboardWillShow(notification: NSNotification) {
-        self.view.frame.origin.y -= getKeyboardHeight(notification)
+        view.frame.origin.y -= getKeyboardHeight(notification)
     }
     
     //When the keyboardWillHide notification is received, shift the view's frame down
     func keyboardWillHide(notification: NSNotification) {
-        self.view.frame.origin.y += getKeyboardHeight(notification)
+        view.frame.origin.y += getKeyboardHeight(notification)
     }
     
     func getKeyboardHeight(notification: NSNotification) -> CGFloat {
@@ -158,19 +158,19 @@ class MemeCreateViewController: UIViewController, UIImagePickerControllerDelegat
     func generateMemedImage() -> UIImage
     {
         // Hide toolbar and navbar
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        navigationController?.setNavigationBarHidden(true, animated: true)
         pickerToolbar.hidden = true
         
         // Render view to an image
         UIGraphicsBeginImageContext(self.view.frame.size)
-        self.view.drawViewHierarchyInRect(self.view.frame,
+        view.drawViewHierarchyInRect(self.view.frame,
             afterScreenUpdates: true)
         let memedImage : UIImage =
         UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
         // Show toolbar and navbar
-        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        navigationController?.setNavigationBarHidden(false, animated: true)
         pickerToolbar.hidden = false
         
         return memedImage
@@ -188,12 +188,12 @@ class MemeCreateViewController: UIViewController, UIImagePickerControllerDelegat
             self.dismissViewControllerAnimated(true, completion: nil)
         }
         
-        self.presentViewController(activityVC, animated: true, completion: nil)
+        presentViewController(activityVC, animated: true, completion: nil)
     }
     
     // Cancel button
     @IBAction func dismissModal(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        dismissViewControllerAnimated(true, completion: nil)
         
     }
     

@@ -34,14 +34,14 @@ class MemeTableViewController: UIViewController, UITableViewDataSource, UITableV
     // MARK: Table View Data Source
 
      func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.memes.count
+        return memes.count
 
     }
     
      func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("MemeCell") as! UITableViewCell
-        let meme = self.memes[indexPath.row]
+        let meme = memes[indexPath.row]
         
         // Set the text and image
         cell.textLabel?.text = meme.topText + "; " + meme.bottomText
@@ -54,11 +54,11 @@ class MemeTableViewController: UIViewController, UITableViewDataSource, UITableV
     
      func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        let detailController = self.storyboard!.instantiateViewControllerWithIdentifier("MemeDetailViewController") as! MemeDetailViewController
-        detailController.meme = self.memes[indexPath.row]
+        let detailController = storyboard!.instantiateViewControllerWithIdentifier("MemeDetailViewController") as! MemeDetailViewController
+        detailController.meme = memes[indexPath.row]
         detailController.hidesBottomBarWhenPushed = true
         
-        self.navigationController!.pushViewController(detailController, animated: true)
+        navigationController!.pushViewController(detailController, animated: true)
         
     }
 
